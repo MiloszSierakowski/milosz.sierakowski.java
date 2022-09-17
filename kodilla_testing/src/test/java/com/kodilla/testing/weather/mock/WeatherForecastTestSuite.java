@@ -2,7 +2,9 @@ package com.kodilla.testing.weather.mock;
 
 import com.kodilla.testing.weather.stub.Temperatures;
 import com.kodilla.testing.weather.stub.WeatherForecast;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.*;
 
 import java.util.HashMap;
@@ -25,7 +27,7 @@ class WeatherForecastTestSuite {
     }
 
     @AfterEach
-    void after(){
+    void after() {
         System.out.println("Test Case: end");
     }
 
@@ -48,7 +50,7 @@ class WeatherForecastTestSuite {
     }
 
     @Test
-    void testAverageTemperature(){
+    void testAverageTemperature() {
         temperaturesMap.put("Rzeszow", 10.0);
         temperaturesMap.put("Krakow", 20.0);
         temperaturesMap.put("Wroclaw", 30.0);
@@ -59,36 +61,38 @@ class WeatherForecastTestSuite {
 
         double averageTemp = weatherForecast.averageTemperature();
 
-        assertEquals(30.0,averageTemp);
+        assertEquals(30.0, averageTemp);
     }
 
+    @Nested
+    class medianTemperatureTests {
+        @Test
+        void testMedianTemperatureEvenNumberOfElements() {
+            temperaturesMap.put("Rzeszow", 10.0);
+            temperaturesMap.put("Krakow", 20.0);
+            temperaturesMap.put("Wroclaw", 30.0);
+            temperaturesMap.put("Warszawa", 40.0);
+            when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+            WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
-    @Test
-    void testMedianTemperatureEvenNumberOfElements(){
-        temperaturesMap.put("Rzeszow", 10.0);
-        temperaturesMap.put("Krakow", 20.0);
-        temperaturesMap.put("Wroclaw", 30.0);
-        temperaturesMap.put("Warszawa", 40.0);
-        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
-        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
+            double MedianTemp = weatherForecast.averageTemperature();
 
-        double MedianTemp = weatherForecast.averageTemperature();
+            assertEquals(25.0, MedianTemp);
+        }
 
-        assertEquals(25.0,MedianTemp);
-    }
+        @Test
+        void testMedianTemperatureOddNumberOfElements() {
+            temperaturesMap.put("Rzeszow", 10.0);
+            temperaturesMap.put("Krakow", 20.0);
+            temperaturesMap.put("Wroclaw", 30.0);
+            temperaturesMap.put("Warszawa", 40.0);
+            temperaturesMap.put("Gdansk", 50.0);
+            when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+            WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
-    @Test
-    void testMedianTemperatureOddNumberOfElements(){
-        temperaturesMap.put("Rzeszow", 10.0);
-        temperaturesMap.put("Krakow", 20.0);
-        temperaturesMap.put("Wroclaw", 30.0);
-        temperaturesMap.put("Warszawa", 40.0);
-        temperaturesMap.put("Gdansk", 50.0);
-        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
-        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
+            double MedianTemp = weatherForecast.averageTemperature();
 
-        double MedianTemp = weatherForecast.averageTemperature();
-
-        assertEquals(30.0,MedianTemp);
+            assertEquals(30.0, MedianTemp);
+        }
     }
 }
