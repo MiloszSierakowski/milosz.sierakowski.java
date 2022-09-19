@@ -1,11 +1,13 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
 public class StreamMain {
     public static void main(String[] args) {
+        /*
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 
         System.out.println("Calculating expressions with lambdas");
@@ -21,12 +23,15 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
 
         System.out.println("End of ezample \n");
-
+*/
         PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        //PoemBeautifier toUpCase = (text) -> {  };
+        PoemDecorator toUpCase = (text) -> {
+            return text.toUpperCase();
+        };
 
-        System.out.println(poemBeautifier.beautify("Niech to bedzie piekny tekst ", () -> "ABC"));
-        //System.out.println(poemBeautifier.beautify("a ten niech zostanie zmieniony na nowy",));
+        System.out.println(poemBeautifier.beautify("Niech to bedzie piekny tekst ", (txt) -> txt + "ABC"));
+        System.out.println(poemBeautifier.beautify("a ten niech zostanie zmieniony na nowy z duzych liter", toUpCase));
+        System.out.println(poemBeautifier.beautify("dodajemy znaki rowna sie po obu stronach", (txt) -> "====== " + txt + " ====="));
     }
 }
