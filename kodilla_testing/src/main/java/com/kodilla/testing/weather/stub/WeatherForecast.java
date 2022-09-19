@@ -39,7 +39,7 @@ public class WeatherForecast {
         Collections.sort(listOfValues);
 
         if (listOfValues.size() % 2 == 0) {
-            medianTemp = (listOfValues.get(listOfValues.size() / 2) + listOfValues.get((listOfValues.size() / 2) + 1)) / 2;
+            medianTemp = (listOfValues.get(listOfValues.size() / 2) + listOfValues.get((listOfValues.size() / 2) - 1)) / 2;
         } else {
             medianTemp = listOfValues.get(listOfValues.size() / 2);
         }

@@ -9,7 +9,7 @@ public class ShapeCollectorTestSuite {
     private ShapeCollector shapeCollector;
     private Shape square;
 
-    @BeforeAll
+    @BeforeEach
     void setUp() {
         shapeCollector = new ShapeCollector();
         square = new Square();
@@ -33,14 +33,13 @@ public class ShapeCollectorTestSuite {
         boolean result = shapeCollector.removeFigure(square);
         assertTrue(result);
         assertEquals(0, shapeCollector.getPostsQuantity());
-
     }
 
     @Test
     void testGetFigure() {
         shapeCollector.addFigure(square);
         Shape retrievedFigure = shapeCollector.getFigure(0);
-        assertEquals(square,retrievedFigure);
+        assertEquals(square, retrievedFigure);
     }
 
     @Test
@@ -51,6 +50,6 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(circle);
         shapeCollector.addFigure(triangle);
         String retrievedFiguresNames = "Square Circle Triangle";
-        assertEquals(shapeCollector.showFigure(),retrievedFiguresNames);
+        assertEquals(shapeCollector.showFigure(), retrievedFiguresNames);
     }
 }
