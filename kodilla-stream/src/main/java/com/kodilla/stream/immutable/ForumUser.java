@@ -4,12 +4,12 @@ public class ForumUser {
     private final String userName;
     private final String realName;
 
-    public ForumUser(final String userName, final String realName) {
-        this.userName = userName;
+    public ForumUser(final String username, final String realName) {
+        this.userName = username;
         this.realName = realName;
     }
 
-    public String getUsername() {
+    public String getUserName() {
         return userName;
     }
 
