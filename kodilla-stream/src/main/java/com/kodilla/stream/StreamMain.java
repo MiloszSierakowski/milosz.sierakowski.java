@@ -10,6 +10,7 @@ import com.kodilla.stream.book.*;
 import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -67,5 +68,9 @@ public class StreamMain {
         theResultMapOfForumUser.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
+
+        String liczba = "16518354336831,1";
+        BigDecimal bigDecimal = new BigDecimal(liczba);
+
     }
 }
