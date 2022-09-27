@@ -11,6 +11,7 @@ import com.kodilla.stream.forumuser.Forum;
 import com.kodilla.stream.forumuser.ForumUser;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -60,7 +61,7 @@ public class StreamMain {
         Forum forum = new Forum();
         Map<Integer, ForumUser> theResultMapOfForumUser = forum.getList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> (2022 - forumUser.getDateOfBirth().getYear()) > 20)
+                .filter(forumUser -> (LocalDate.now().getYear() - forumUser.getDateOfBirth().getYear()) > 20)
                 .filter(forumUser -> forumUser.getNumberOfTotalPosts() > 0)
                 .collect(Collectors.toMap(ForumUser::getIdNumber, forumUser -> forumUser));
 
@@ -69,7 +70,7 @@ public class StreamMain {
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
 
-        String liczba = "16518354336831,1";
+        String liczba = "165183543368311";
         BigDecimal bigDecimal = new BigDecimal(liczba);
 
     }
