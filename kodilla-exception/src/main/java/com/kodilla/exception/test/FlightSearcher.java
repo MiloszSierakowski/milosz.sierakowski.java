@@ -17,17 +17,18 @@ public class FlightSearcher {
         flightDataBase.put("Bogota", false);
         boolean flightExist = false;
 
-        if (flight != null) {
-            for (Map.Entry<String, Boolean> entry : flightDataBase.entrySet()) {
-                if (entry.getKey().equals(flight.getArrivalAirport())) {
-                    flightExist = true;
-                    if (entry.getValue()) {
-                        System.out.println("Wyszukiwane lotnisko jest dostepne dla podruznych " + flight.getArrivalAirport());
-                    } else {
-                        System.out.println("Wyszukiwane lotnisko nie jest dostepne dla podruznych " + flight.getArrivalAirport());
-                    }
+
+        if (flight != null && flightDataBase.containsKey(flight.getArrivalAirport())) {
+            if (flightDataBase.get(flight.getArrivalAirport()) != null) {
+                if (flightDataBase.get(flight.getArrivalAirport())) {
+                    System.out.println("Wyszukiwane lotnisko jest dostepne dla podruznych " + flight.getArrivalAirport() + ".");
+                } else {
+                    System.out.println("Wyszukiwane lotnisko nie jest dostepne dla podruznych " + flight.getArrivalAirport() + ".");
                 }
+            } else {
+                System.out.println("Podane lotnisko znajduje się w bazie danych lecz nie mamy na jego temat żadnych danych przepraszamy za niedogodnośći.");
             }
+            flightExist = true;
         }
 
         if (!flightExist) {
@@ -51,9 +52,9 @@ public class FlightSearcher {
             try {
                 flightSearcher.findFilght(temporaryFlight);
             } catch (RouteNotFoundException e) {
-                System.out.println("W bazie danych nie ma lotniska o podanej nazwie ");
+                System.out.println("W bazie danych nie ma lotniska o podanej nazwie.");
             } finally {
-                System.out.println("Dziekujemy za skorzystanie z naszej wyszukiwarki lotow \n");
+                System.out.println("Dziekujemy za skorzystanie z naszej wyszukiwarki lotow. \n");
             }
         }
 
