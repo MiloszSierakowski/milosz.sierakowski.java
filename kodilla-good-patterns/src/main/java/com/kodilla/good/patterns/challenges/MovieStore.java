@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class MovieStore {
+public class MovieStore {
 
     public Map<String, List<String>> getMovies() {
         List<String> ironManTranslations = new ArrayList<>();
