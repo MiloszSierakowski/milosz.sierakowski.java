@@ -17,12 +17,11 @@ public class Game implements Product {
     }
 
     @Override
-    public double getPrice() {
-        return price;
-    }
-
-    @Override
-    public int getQuantity() {
-        return quantity;
+    public String toString() {
+        return "Game{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
     }
 }
