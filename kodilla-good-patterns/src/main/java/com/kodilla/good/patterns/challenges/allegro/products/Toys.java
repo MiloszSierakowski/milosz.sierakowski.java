@@ -1,11 +1,11 @@
-package com.kodilla.good.patterns.allegro.products;
+package com.kodilla.good.patterns.challenges.allegro.products;
 
-public class Game implements Product {
+public class Toys implements Product {
     private final String name;
     private final double price;
     private final int quantity;
 
-    public Game(String name, double price, int quantity) {
+    public Toys(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -18,7 +18,7 @@ public class Game implements Product {
 
     @Override
     public String toString() {
-        return "Game{" +
+        return "Toys{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +

@@ -1,13 +1,16 @@
-package com.kodilla.good.patterns.allegro;
+package com.kodilla.good.patterns.challenges.allegro;
+
+import com.kodilla.good.patterns.challenges.allegro.basket.OrderValidation;
+import com.kodilla.good.patterns.challenges.allegro.information_service.InformationService;
+import com.kodilla.good.patterns.challenges.allegro.order_repository.OrderRepository;
 
 public class ProductOrderService {
-    private OrderValidation orderValidation;
-    private InformationService informationService;
-    private OrderRepository orderRepository;
+    private final OrderValidation orderValidation;
+    private final InformationService informationService;
+    private final OrderRepository orderRepository;
 
-    public ProductOrderService(final OrderValidation orderValidation,
-                               final InformationService orderInformation,
-                               final OrderRepository orderRepository) {
+    public ProductOrderService(OrderValidation orderValidation, InformationService orderInformation,
+                               OrderRepository orderRepository) {
         this.orderValidation = orderValidation;
         this.informationService = orderInformation;
         this.orderRepository = orderRepository;

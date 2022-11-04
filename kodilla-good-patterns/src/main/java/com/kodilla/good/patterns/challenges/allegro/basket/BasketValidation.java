@@ -1,6 +1,7 @@
-package com.kodilla.good.patterns.allegro;
+package com.kodilla.good.patterns.challenges.allegro.basket;
 
-import com.kodilla.good.patterns.allegro.products.Product;
+import com.kodilla.good.patterns.challenges.allegro.User;
+import com.kodilla.good.patterns.challenges.allegro.products.Product;
 
 import java.util.List;
 

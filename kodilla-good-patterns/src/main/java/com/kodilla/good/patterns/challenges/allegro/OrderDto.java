@@ -1,11 +1,10 @@
-package com.kodilla.good.patterns.allegro;
+package com.kodilla.good.patterns.challenges.allegro;
 
 public class OrderDto {
+    private final User user;
+    private final boolean isOrdered;
 
-    private User user;
-    private boolean isOrdered;
-
-    public OrderDto(final User user,final boolean isOrdered) {
+    public OrderDto(final User user, final boolean isOrdered) {
         this.user = user;
         this.isOrdered = isOrdered;
     }

@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.allegro;
+package com.kodilla.good.patterns.challenges.allegro;
 
 public class User {
     private final String name;
@@ -7,7 +7,7 @@ public class User {
         this.name = name;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
