@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.food2door.producer.product;
+package com.kodilla.good.patterns.food2door.product;
 
 public class Product {
 
