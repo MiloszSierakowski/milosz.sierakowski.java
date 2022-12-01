@@ -14,8 +14,7 @@ public final class TaskList {
     public TaskList() {
     }
 
-    public TaskList(int id, String listName, String description) {
-        this.id = id;
+    public TaskList(String listName, String description) {
         this.listName = listName;
         this.description = description;
     }
@@ -49,4 +48,6 @@ public final class TaskList {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }
