@@ -49,22 +49,16 @@ public class InvoiceDaoTestSuite {
 
         product.getItems().add(item);
         product.getItems().add(item1);
-        productDao.save(product);
-
         item1.setProduct(product);
         item.setProduct(product);
-        itemDao.save(item);
-        itemDao.save(item1);
+        productDao.save(product);
 
         List<Item> items = itemDao.findByProduct(product);
 
         assertEquals(2, items.size());
 
-        int id = items.get(0).getId();
-        int id1 = items.get(1).getId();
         int productId = items.get(0).getProduct().getId();
-        itemDao.deleteById(id);
-        itemDao.deleteById(id1);
+
         productDao.deleteById(productId);
 
     }
@@ -79,22 +73,16 @@ public class InvoiceDaoTestSuite {
         Invoice invoice = new Invoice(INVOICENUMBER);
         invoice.getItems().add(item1);
         invoice.getItems().add(item);
-        invoiceDao.save(invoice);
 
         product.getItems().add(item);
         product1.getItems().add(item1);
-        productDao.save(product);
-        productDao.save(product1);
-
 
         item1.setProduct(product1);
         item.setProduct(product);
         item1.setInvoice(invoice);
         item.setInvoice(invoice);
 
-        itemDao.save(item);
-        itemDao.save(item1);
-
+        invoiceDao.save(invoice);
         List<Item> items = itemDao.findByProduct(product);
         List<Item> items1 = itemDao.findByProduct(product1);
 
@@ -112,16 +100,8 @@ public class InvoiceDaoTestSuite {
 
         );
 
-        int id = items.get(0).getId();
-        int id1 = items1.get(0).getId();
-        int productId = items.get(0).getProduct().getId();
-        int productId1 = items1.get(0).getProduct().getId();
-        int invoiceId = invoices.get(0).getId();
-        itemDao.deleteById(id);
-        itemDao.deleteById(id1);
-        productDao.deleteById(productId);
-        productDao.deleteById(productId1);
-        invoiceDao.deleteById(invoiceId);
+        int id = items.get(0).getInvoice().getId();
+        invoiceDao.deleteById(id);
 
     }
 
