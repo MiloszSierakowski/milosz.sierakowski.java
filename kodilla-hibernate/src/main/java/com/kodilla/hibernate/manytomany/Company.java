@@ -6,7 +6,12 @@ import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@NamedNativeQuery(
+        name = "Company.findCompanyByName",
+        query = "SELECT * FROM COMPANIES" +
+                " Where COMPANY_NAME LIKE :name '%'",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
@@ -43,7 +48,8 @@ public class Company {
         this.name = name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
+    @NotNull
     public List<Employee> getEmployees() {
         return employees;
     }
