@@ -1,0 +1,11 @@
+{
+"carName":"307cc"
+"carMark":"Peugeot"
+"carSeats":[
+{skin, black},
+{skin, black},
+{skin, black},
+{skin, black}
+]
+"engineCapacity":"2.0"
+}
