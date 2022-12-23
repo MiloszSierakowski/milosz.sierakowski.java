@@ -1,11 +1,23 @@
 {
-"carName":"307cc"
-"carMark":"Peugeot"
+"carName":"307 cc",
+"carMark":"Peugeot",
 "carSeats":[
-{skin, black},
-{skin, black},
-{skin, black},
-{skin, black}
-]
-"engineCapacity":"2.0"
+    {
+    "material":"skin",
+    "color":"czerwony"
+    },
+    {
+    "material":"skin",
+    "color":"zielony"
+    },
+    {
+    "material":"skin",
+    "color":"złoty"
+    },
+    {
+    "material":"skin",
+    "color":"czarny"
+    }
+],
+"engineCapacity":2.0
 }
