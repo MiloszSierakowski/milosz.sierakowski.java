@@ -1,6 +1,8 @@
 package com.kodilla.good.patterns.food2door.producer;
 
+import com.kodilla.good.patterns.food2door.OrderRequest;
+
 public interface Producers {
-    String process();
+    boolean process(OrderRequest orderRequest);
 
 }

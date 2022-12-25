@@ -97,7 +97,7 @@ class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
 
-        List<Company> companyList = companyDao.findCompanyByName("Soft");
+        List<Company> companyList = companyDao.findCompanyByName("Sof");
 
         List<Employee> employeeList = employeeDao.findEmployeeWithSelectedName("Kovalsky");
 

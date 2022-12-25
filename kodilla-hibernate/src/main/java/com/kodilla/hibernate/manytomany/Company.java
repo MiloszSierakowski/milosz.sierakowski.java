@@ -9,7 +9,7 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Company.findCompanyByName",
         query = "SELECT * FROM COMPANIES" +
-                " Where COMPANY_NAME LIKE :name '%'",
+                " Where SUBSTRING(company_name,1,3) = :name ",
         resultClass = Company.class
 )
 @Entity
