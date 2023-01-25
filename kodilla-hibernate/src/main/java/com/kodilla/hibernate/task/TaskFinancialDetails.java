@@ -1,8 +1,7 @@
 package com.kodilla.hibernate.task;
 
-import org.jetbrains.annotations.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity

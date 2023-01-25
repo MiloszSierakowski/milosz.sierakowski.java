@@ -1,15 +1,23 @@
 package com.kodilla.hibernate.manytomany;
 
-import org.jetbrains.annotations.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Employee.findEmployeeWithSelectedName",
-        query = "FROM Employee where lastname = :LASTTNAME"
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Employee.findEmployeeWithSelectedName",
+                query = "SELECT * FROM EMPLOYEES where lastname = :LASTTNAME"
+        ),
+
+        @NamedNativeQuery(
+                name = "Employee.findEmployeeByPartOfTheName",
+                query = "SELECT * FROM EMPLOYEES" +
+                        " WHERE LASTNAME like '%' :LASTTNAME1 '%'",
+                resultClass = Employee.class
+        )
+})
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {

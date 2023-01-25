@@ -1,17 +1,23 @@
 package com.kodilla.hibernate.manytomany;
 
-import org.jetbrains.annotations.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-
-@NamedNativeQuery(
-        name = "Company.findCompanyByName",
-        query = "SELECT * FROM COMPANIES" +
-                " Where SUBSTRING(company_name,1,3) = :name ",
-        resultClass = Company.class
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.findCompanyByName",
+                query = "SELECT * FROM COMPANIES" +
+                        " Where SUBSTRING(company_name,1,3) = :name ",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.findCompanyByPartOfTheName",
+                query = "SELECT * FROM COMPANIES" +
+                        " Where company_name like '%' :name1 '%' ",
+                resultClass = Company.class
+        )
+})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
