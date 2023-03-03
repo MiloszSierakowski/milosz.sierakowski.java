@@ -7,5 +7,4 @@ public class Display {
     public String displayValue(double val){
         return Double.toString(val);
     }
-
 }

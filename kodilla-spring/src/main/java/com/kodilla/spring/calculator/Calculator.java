@@ -9,6 +9,11 @@ public class Calculator {
     @Autowired
     public Display display;
 
+
+    public int div(int a, int b) throws ArithmeticException {
+        return a / b;
+    }
+
     public String add(double a, double b) {
         return display.displayValue(a + b);
     }

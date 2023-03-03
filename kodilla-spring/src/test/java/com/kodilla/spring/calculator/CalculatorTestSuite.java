@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-
 public class CalculatorTestSuite {
 
     @Autowired
@@ -51,6 +50,13 @@ public class CalculatorTestSuite {
         String div = calculator.div(a, b);
 
         assertEquals("1.0", div);
+    }
+
+    @Test
+    void testThrowsArtmeticExeption() {
+        assertThrows(ArithmeticException.class, () -> {
+            calculator.div(2, 0);
+        });
     }
 
 }
