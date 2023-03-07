@@ -11,11 +11,18 @@ public class GoogleTestingApp {
 
     public static void main(String[] args) {
         WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
-        driver.get("https://www.google.com");
+/*        driver.get("https://www.google.com");
 
         driver.findElement(By.xpath("//*[@id=\"L2AGLb\"]/div")).click();
         WebElement searchField = driver.findElement(By.name(SEARCHFIELD));
         searchField.sendKeys("Kodilla");
-        searchField.submit();
+        searchField.submit();*/
+
+
+        driver.get("https://www.ebay.com/");
+        WebElement searchFieldEBay = driver.findElement(By.name(SEARCHFIELDEBAY));
+        searchFieldEBay.sendKeys("Laptop");
+        searchFieldEBay.submit();
+
     }
 }
