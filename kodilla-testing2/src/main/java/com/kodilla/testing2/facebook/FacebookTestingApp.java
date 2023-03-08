@@ -11,11 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class FacebookTestingApp {
-    public static final String XPATH_COOKIEBUTTON = "//*/div[3]/button[@class=\"_42ft _4jy0 _9xo7 _4jy3 _4jy1 selected _51sy\"]";
-    public static final String XPATH_REGISTRATIONBUTTON = "*//div[contains(@class, \"_6ltg\")]/a";
-    public static final String XPATH_DAY = "//*/select[@id=\"day\"]";
-    public static final String XPATH_MONTH = "//*/select[@id=\"month\"]";
-    public static final String XPATH_YEAR = "//*/select[@id=\"year\"]";
+    public static final String XPATH_COOKIEBUTTON = "//div[3]/button[@class=\"_42ft _4jy0 _9xo7 _4jy3 _4jy1 selected _51sy\"]";
+    public static final String XPATH_REGISTRATIONBUTTON = "//div[contains(@class, \"_6ltg\")]/a";
+    public static final String XPATH_DAY = "//select[@id=\"day\"]";
+    public static final String XPATH_MONTH = "//select[@id=\"month\"]";
+    public static final String XPATH_YEAR = "//select[@id=\"year\"]";
 
     public static void main(String[] args) {
         WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
